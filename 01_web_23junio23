@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=3">
+
+<title>MiWeb</title>
+
+<br>
+<br>
+<br>
+
+<h1><center><FONT FACE="impact" SIZE=600 COLOR="blue">😛 ¡Hola amigos! 😛</FONT></center></h1>
+
+<h2><center><img src="fotocentral.jpg"</center></h2>
+
+</head>
+
+<body background="nada.jpg" style="max-width:22%;width:auto;height:auto;">
+
+<script language="JavaScript">var estado=true;
+setTimeout("ver()",450);
+function ver ()
+{estado=!estado;
+if(estado==true)  texto1.style.visibility="visible";
+else  texto1.style.visibility="hidden";
+setTimeout("ver()",450);}
+</script><p align="center" id="texto1"  style="visibility:visible">
+<FONT FACE="impact" SIZE=800 COLOR="pink">
+🥰 ¿QUE TAL ESTÁS HOY? 🥰
+</font></p>
+
+</body>
+</html>
