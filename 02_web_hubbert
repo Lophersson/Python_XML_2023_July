@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=3">
+
+<title>humberto</title>
+
+<br>
+<br>
+<br>
+
+<h1><center><FONT FACE="impact" SIZE=600 COLOR="#AED6F1">😛 ¡Hola amigos! 😛</FONT></center></h1>
+
+<br>
+
+<h2><center><img src="img1.gif"</center></h2>
+
+</head>
+
+<body background="fondo.jpg" style="max-width:100%;width:auto;height:auto;">
+
+<script language="JavaScript">var estado=true; setTimeout("ver()",450); function ver ()
+
+{estado=!estado; if(estado==true) texto1.style.visibility="visible"; else texto1.style.visibility="hidden"; setTimeout("ver()",450);}
+
+</script><p align="center" id="texto1"  style="visibility:visible">
+
+<br>
+
+<FONT FACE="impact" SIZE=800 COLOR="#FCE4EC"> 🥰 ¿Que tal estás hoy? 🥰 </font></p>
+
+</body>
+</html>
+
+
+
+
+
