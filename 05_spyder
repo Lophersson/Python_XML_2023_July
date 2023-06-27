@@ -46,6 +46,38 @@ resultado_filter = list(filter(lambda palabra)
 GRUPO 6
 
 
+GRUPO GENESIS, CRISTINA Y HUMBERTO
+a = [55, 22, 93, 47]
+b = [21, 48, 60, 81]
+
+names = ["Alice", "Bob", "Charlie", "David"]
+def additon(m, n):
+    return m+n
+result = list(map(additon, a, b))
+for name, result in zip(names, result):
+    print(f"{name}: {result}")
+
+OTHER
+def mult(n):
+    if n==4:
+        return True
+    else:
+        return None
+    
+x = map(mult,[1, 2, 3, 4, 5])
+print(list(x))
+
+OTHER
+l = ["Julio", "Francisco"]
+def f(s):
+    s= s[0:-1] + "a"
+    return s
+
+x = list(map(f, l))
+print(x)
+
+
+
 
 
 
