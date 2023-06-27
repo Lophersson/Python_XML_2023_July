@@ -1,0 +1,54 @@
+GRUPO 1
+def mult(n):
+    if n==4:
+        return True
+    else:
+        return None
+    
+x = map(mult,[1, 2, 3, 4, 5])
+print(list(x))
+
+GRUPO 2
+cadena = ["lidia", "eduardo", "david"]
+def f(s):
+    if s.endswith("a"):
+        return True
+
+    return False
+
+filtradas = list(filter(f, cadena))
+print(filtradas)
+
+GRUPO 3
+from functools import reduce
+
+def calcular_producto(lista):
+    return reduce(lambda x, y: x * y, lista)
+
+numeros = [1, 2, 3, 4, 5]
+producto = calcular_producto(numeros)
+print(producto)
+
+GRUPO 4
+def f(s):
+    return s[::-1]
+
+lista = ['paco', 'manolo', 'pepe']
+x = list(map(f, lista[::-1]))
+print(x)
+
+GRUPO 5 INCOMPLETO
+letra_objetivo = 'a'
+palabras = ['casa', 'perra', 'gato', 'auto', 'manzana']
+
+resultado_filter = list(filter(lambda palabra)
+
+GRUPO 6
+
+
+
+
+
+
+
+
