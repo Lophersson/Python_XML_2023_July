@@ -76,6 +76,23 @@ def f(s):
 x = list(map(f, l))
 print(x)
 
+OTHER
+l = [1, 2, 3]
+def f(n):
+        return n*2
+    
+x = list(map(f, l))
+print(x)
+    
+def f2 (n):
+    if n%2==0:
+        return True
+    else:
+        return False
+x = list(filter(f2, l))
+print(x)
+
+
 
 
 
