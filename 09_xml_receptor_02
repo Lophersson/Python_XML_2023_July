@@ -1,0 +1,45 @@
+#Persona que hace de receptor:
+
+import socket
+
+def recibir_mensaje(ip_receptor, puerto_receptor):
+    # Crear un socket TCP/IP
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Enlazar el socket a una dirección y puerto específicos
+    server_address = (ip_receptor, puerto_receptor)
+    sock.bind(server_address)
+
+    # Escuchar las conexiones entrantes
+    sock.listen(1)
+
+    print("Esperando conexión...")
+
+    while True:
+        # Esperar una conexión
+        connection, client_address = sock.accept()
+
+        try:
+            print("Conexión establecida desde:", client_address)
+
+            # Recibir los datos en trozos y rearmarlos
+            data = ""
+            while True:
+                chunk = connection.recv(16).decode('utf-8')
+                if not chunk:
+                    break
+                data += chunk
+
+            print("Mensaje recibido:", data)
+
+        finally:
+            # Cerrar la conexión
+            connection.close()
+            break
+
+# Datos del receptor
+ip_receptor = '192.168.1.76'
+puerto_receptor = 8080
+
+# Llamar a la función para recibir el mensaje
+recibir_mensaje(ip_receptor, puerto_receptor)
