@@ -1,0 +1,29 @@
+#Persona que hace de emisor:
+
+import socket
+def enviar_mensaje(ip_destino, puerto_destino, mensaje):
+    # Crear un socket TCP/IP
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Conectar el socket al puerto donde el receptor está escuchando
+    server_address = (ip_destino, puerto_destino)
+    sock.connect(server_address)
+
+    try:
+        # Enviar el mensaje
+        sock.sendall(mensaje.encode('utf-8'))
+        print("Mensaje enviado:", mensaje)
+
+    finally:
+        # Cerrar la conexión
+        sock.close()
+
+# Datos del receptor
+ip_receptor = '192.168.1.76'
+puerto_receptor = 8080
+
+# Mensaje a enviar
+mensaje = "¡Hola, receptor!"
+
+# Llamar a la función para enviar el mensaje
+enviar_mensaje(ip_receptor, puerto_receptor, mensaje)
