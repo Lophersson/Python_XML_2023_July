@@ -1,0 +1,58 @@
+#servidor del Juego (Recuerda cambiar la IP por la del alumno que haga de Servidor)
+import random
+import socket
+
+# Configuración del servidor
+HOST = '192.168.1.36'  # Dirección IP del servidor
+PORT = 12345  # Puerto en el que el servidor escucha las conexiones
+
+# Generar un número aleatorio para adivinar
+numero_secreto = random.randint(1, 10)
+
+
+try:
+    # Crear un socket del servidor
+    servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    servidor.bind((HOST, PORT))
+
+    # Esperar conexiones
+    servidor.listen(1)
+    print('Esperando conexiones...')
+   
+    # Aceptar la conexión de un cliente
+    cliente, direccion = servidor.accept()
+    print('Cliente conectado:', direccion)
+   
+    while True:
+        # Pedir al cliente que adivine un número
+        cliente.sendall('Adivina un número entre 1 y 10: '.encode('utf-8'))
+   
+        # Recibir la respuesta del cliente
+        numero_adivinado = cliente.recv(1024).decode()
+   
+        try:
+            numero_adivinado = int(numero_adivinado)
+            if numero_adivinado == numero_secreto:
+                mensaje = 'Acertaste!'
+                cliente.sendall(mensaje.encode())
+                break
+            elif numero_adivinado < numero_secreto:
+                mensaje = 'El número es mayor.'
+                cliente.sendall(mensaje.encode())
+            else:
+                mensaje = 'El número es menor.'
+                cliente.sendall(mensaje.encode())
+        except ValueError:
+            mensaje = 'Ingrese un número válido.'
+            cliente.sendall(mensaje.encode())
+
+except Exception as e:
+    print('Error en el cliente:', e)
+   
+
+finally:
+    # Cerrar la conexión con el servidor
+    cliente.close()
+# Cerrar la conexión con el cliente
+cliente.close()
+servidor.close()
