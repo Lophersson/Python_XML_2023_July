@@ -1,0 +1,8 @@
+https://sqlzoo.net/wiki/SELECT_names
+STEP_1
+SELECT GDP, POPULATION, GDP FROM world
+  WHERE name = 'Spain' OR name='Italy'
+
+STEP_2
+SELECT COUNT(name) FROM world
+  WHERE name LIKE '%F%'
