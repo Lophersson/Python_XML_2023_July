@@ -1,0 +1,4 @@
+<div id="carrusel">
+    <a href="#" class="left-arrow"><img src="left.png" /></a>
+    <a href="#" class="right-arrow"><img src="right.png" /></a>
+    <div class="carrusel">
