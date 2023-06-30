@@ -12,3 +12,34 @@ listas = ['a', 'A', 'b', 'B', 'z', 'Z']
 lista_complex =[('juan', 20), ('paco', 40), ('maria', 23), ('julia', 50)]
 lista_complex.sort(key=lambda x:x[1] ,reverse=True)
 print(lista_complex)
+
+STEP_03
+# Definir una lista con nombres y edades
+personas = [
+    {"nombre": "Juan", "edad": 25},
+    {"nombre": "María", "edad": 30},
+    {"nombre": "Pedro", "edad": 35}
+]
+
+# Solicitar el nombre de una persona
+nombre = input("Introduce el nombre de una persona: ")
+
+# Buscar la persona en la lista y obtener su edad
+for persona in personas:
+    if persona["nombre"] == nombre:
+        edad = persona["edad"]
+        print(f"La edad de {nombre} es {edad} años.")
+        break  # Terminar el bucle si se encuentra la persona
+
+# Si no se encuentra la persona en la lista
+else:
+    print("No se encontró la persona en la lista.")
+
+STEP_04
+lista = [6,8,3,1,3,2,5,7,9]
+listaf = [6,8,9,7,6,5,4,5,6,3,2,1,3.4,3.6,8.9,9.9,2.1,5.3]
+listas = ['a', 'A', 'b', 'B', 'z', 'Z']
+lista_complex =[('juan', 20), ('paco', 40), ('maria', 23), ('julia', 50)]
+lista_complex2 =[{'nombre': 'juan', 'edad': 20}, {'nombre': 'paco', 'edad': 40}, {'nombre': 'maria', 'edad': 23}, {'nombre': 'maria', 'edad': 50}]
+lista_complex2.sort(key=lambda x:x['edad'] ,reverse=True)
+print(lista_complex2)
