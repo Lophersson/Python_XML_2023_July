@@ -1,0 +1,23 @@
+from lxml import etree
+
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    #print(xml_tree)
+
+   
+    libros = xml_tree.xpath("//libro[anio > 1980]/titulo")
+    #print(libros)
+    for libro in libros:
+        print(libro.text)
+       
+    total_libros = len(libros)
+    print(total_libros)
+
+# Ruta al archivo XML y DTD
+xml_file = "libro.xml"
+
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)
