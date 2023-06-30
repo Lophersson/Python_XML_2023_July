@@ -1,0 +1,24 @@
+from lxml import etree
+
+def leer_fichero(xml_file):
+    try:
+        # Cargar el archivo XML y el DTD
+        xml_tree = etree.parse(xml_file)
+        print(xml_tree)
+    except IOError:
+        print("Error al leer el archivos XML.")
+    except etree.XMLSyntaxError as e:
+        print("Error de sintaxis XML:", str(e))
+   
+   
+    libros = xml_tree.xpath("//libro")
+    print(libros)
+    for libro in libros:
+        print(libro.text)
+
+# Ruta al archivo XML y DTD
+xml_file = "libro.xml"
+
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)
