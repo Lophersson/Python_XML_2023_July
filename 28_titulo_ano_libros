@@ -1,0 +1,21 @@
+#programa en python, donde se pide los libros posteriores a 1980.
+from lxml import etree
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    print(xml_tree)
+
+   
+    #libros = xml_tree.xpath("//libros/lbro")
+    libros = xml_tree.xpath("//libros/libro[titulo and anio]")
+    print(libros)
+    for libro in libros:
+        titulo = libro.find("titulo").text
+        anio = libro.find("anio").text
+        print(titulo)
+        print(anio)
+        print("---")
+
+xml_file = "libro.xml"
+leer_fichero(xml_file)
