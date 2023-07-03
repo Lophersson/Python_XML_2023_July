@@ -1,0 +1,24 @@
+#esta consulta en python tiene que hacerser con el archivo anterior "30_empleados.xml" que se guardará en la misma carpeta
+
+from lxml import etree
+
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    print(xml_tree)
+
+   
+    #libros = xml_tree.xpath("//empleados/Empleados")
+    documento = etree.parse("empleados.xml")
+    empleados = documento.xpath("//empleado/nombre")
+    for empleado in empleados:
+        print(empleado.text)
+   
+   
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)
