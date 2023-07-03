@@ -20,7 +20,7 @@ for empleado in empleados[:3]:
 
 OTRA FORMA DE HACERLO:
 
-Los empleados del top de los salrioos mas altos
+Los empleados del top de los salarios mas altos
 
 from lxml import etree
 
@@ -34,13 +34,15 @@ def encontrar_top_tres_salarios(xml_file):
     for i in range(3):
         empleado = empleados_ordenados[i]
         nombre = empleado.find("nombre").text
-        apellido = empleado.find("apellido").text
+        apellido = empleado.find("apellidos").text
         salario = empleado.find("salario").text
        
+        print("   ")
         print(f"Empleado {i+1}:")
         print("Nombre:", nombre)
-        print("Apellido:", apellido)
+        print("Apellidos:", apellido)
         print("Salario:", salario)
+        print("   ")
 
 # Ruta al archivo XML
 xml_file = "empleados.xml"
