@@ -1,0 +1,11 @@
+import statistics
+def superfunc(lista):
+    minimo = min(lista)
+    maximo = max(lista)
+    suma = sum(lista)
+    promedio = suma / len(lista)
+    d = statistics.stdev(lista)
+    return f"el minimo es {minimo}, el maximo es {maximo}, La suma de los elementos es {suma}, el promedio es {promedio}, la desviación tipica es {d}"
+
+mi_lista = [8, 24, 1, 7]
+print(superfunc(mi_lista))
