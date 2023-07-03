@@ -7,7 +7,7 @@ def leer_fichero(xml_file):
     print(xml_tree)
 
    
-    #libros = xml_tree.xpath("//libros/lbro")
+    #libros = xml_tree.xpath("//libros/libro")
     libros = xml_tree.xpath("//libros/libro[titulo and anio]")
     print(libros)
     for libro in libros:
