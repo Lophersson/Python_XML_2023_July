@@ -1,0 +1,28 @@
+lista=[8,24,1,7]
+def max_min(lista):
+    maximo = max(lista)
+    minimo = min(lista)
+    return maximo, minimo
+x,y=max_min(lista)
+print(x)
+print(y)
+
+def suma_total(lista):
+    suma = 0
+    for numero in lista:
+        suma += numero
+    return suma
+
+numeros = [8, 24, 1, 7]
+resultado = suma_total(numeros)
+print("La suma total de la lista es:", resultado)
+
+def calcular_promedio(lista):
+    suma = sum(lista)
+    longitud = len(lista)
+    promedio = suma / longitud
+    return promedio
+
+números = [8, 24, 1, 7]
+promedio = calcular_promedio(números)
+print(promedio)
