@@ -1,0 +1,22 @@
+from lxml import etree
+
+def empleado_mayor_salario(xml_file):
+    xml_tree = etree.parse(xml_file)
+    empleados = xml_tree.xpath("//empleado")
+   
+    empleado_mayor_salario = max(empleados, key=lambda x: float(x.find("salario").text))
+   
+    nombre = empleado_mayor_salario.find("nombre").text
+    apellido = empleado_mayor_salario.find("apellido").text
+    salario = empleado_mayor_salario.find("salario").text
+   
+    print("Empleado con mayor salario es:")
+    print("Nombre:", nombre)
+    print("Apellido:", apellido)
+    print("Salario:", salario)
+
+
+xml_file = "empleados.xml"
+
+
+empleado_mayor_salario(xml_file)
