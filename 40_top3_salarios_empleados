@@ -1,0 +1,48 @@
+#XPath en Python.
+#Obtener los 3 empleados que más cobran de la empresa de mayor a menor:
+from lxml import etree
+
+documento = etree.parse("empleados.xml")
+empleados = documento.xpath("//empleado")
+
+empleados.sort(key=lambda e: float(e.xpath("salario")[0].text), reverse=True)
+
+cont = 1
+for empleado in empleados[:3]:
+    nombre = empleado.xpath("nombre")[0].text
+    salario = empleado.xpath("salario")[0].text
+    print("TOP", cont)
+    print(nombre)
+    print(salario)
+    print("---")
+    cont += 1
+
+
+OTRA FORMA DE HACERLO:
+
+Los empleados del top de los salrioos mas altos
+
+from lxml import etree
+
+def encontrar_top_tres_salarios(xml_file):
+    xml_tree = etree.parse(xml_file)
+    empleados = xml_tree.xpath("//empleado")
+   
+    empleados_ordenados = sorted(empleados, key=lambda x: float(x.find("salario").text), reverse=True)
+   
+    print("Top tres empleados con los salarios más altos:")
+    for i in range(3):
+        empleado = empleados_ordenados[i]
+        nombre = empleado.find("nombre").text
+        apellido = empleado.find("apellido").text
+        salario = empleado.find("salario").text
+       
+        print(f"Empleado {i+1}:")
+        print("Nombre:", nombre)
+        print("Apellido:", apellido)
+        print("Salario:", salario)
+
+# Ruta al archivo XML
+xml_file = "empleados.xml"
+
+encontrar_top_tres_salarios(xml_file)
