@@ -7,12 +7,12 @@ def empleado_mayor_salario(xml_file):
     empleado_mayor_salario = max(empleados, key=lambda x: float(x.find("salario").text))
    
     nombre = empleado_mayor_salario.find("nombre").text
-    apellido = empleado_mayor_salario.find("apellido").text
+    apellido = empleado_mayor_salario.find("apellidos").text
     salario = empleado_mayor_salario.find("salario").text
    
     print("Empleado con mayor salario es:")
     print("Nombre:", nombre)
-    print("Apellido:", apellido)
+    print("Apellidos:", apellido)
     print("Salario:", salario)
 
 
