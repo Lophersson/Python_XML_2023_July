@@ -1,0 +1,4 @@
+import statistics
+l = [8, 24, 1, 7]
+d = statistics.stdev(l)
+print(d)
