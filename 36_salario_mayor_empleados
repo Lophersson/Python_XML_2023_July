@@ -1,0 +1,17 @@
+#XPath en Python.
+#Obtener el salario máximo de la empresa:
+
+from lxml import etree
+
+# Parsear el archivo XML
+documento = etree.parse("empleados.xml")
+
+# Obtener todos los salarios como una lista de números
+salarios = [int(salario.text) for salario in documento.xpath("//empleado/salario")]
+
+print("salarios=", salarios)
+# Obtener el salario máximo
+salario_maximo = max(salarios)
+print("salario_maximo=", salario_maximo)
+
+#Puedes cambiar int por float para que te salga decimales
