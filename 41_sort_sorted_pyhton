@@ -1,0 +1,4 @@
+l =  [8, 24, 1, 7]
+l.sort()
+x = sorted(l)
+print(x)
