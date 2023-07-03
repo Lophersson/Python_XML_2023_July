@@ -1,0 +1,8 @@
+lista=[8,24,1,7]
+def max_min(lista):
+    maximo = max(lista)
+    minimo = min(lista)
+    return maximo, minimo
+x,y=max_min(lista)
+print(x)
+print(y)
