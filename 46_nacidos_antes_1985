@@ -1,0 +1,9 @@
+#XPath en Python. Obtener los empleados nacidos antes de 1985.
+from lxml import etree
+
+# Parsear el archivo XML
+documento = etree.parse("empleados.xml")
+
+empleados = documento.xpath("//empleado[substring(fecha_nac, 7) < '1985']/nombre")
+for e in empleados:
+    print(e.text)
