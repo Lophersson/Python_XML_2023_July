@@ -1,0 +1,12 @@
+#XPath en Python. obtener todos los departamentos (sin repetidos):
+
+from lxml import etree
+
+# Parsear el archivo XML
+documento = etree.parse("empleados.xml")
+
+#obtener todos los departamentos
+departamentos = documento.xpath("//departamento/text()")
+departamentos_distintos = set(departamentos)
+for departamento in departamentos_distintos:
+    print(departamento)
